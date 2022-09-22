@@ -59,8 +59,7 @@ const SignUp = () => {
         setLoading(true);
         const newData = await { ...data, pic: pic };
 
-        // fetch("https://mern-takl-a-tive.herokuapp.com/users", {
-        fetch("http://localhost:5000/users", {
+        fetch("https://mern-takl-a-tive.herokuapp.com/users", {
           method: "POST",
           headers: {
             "Content-type": "application/json",
