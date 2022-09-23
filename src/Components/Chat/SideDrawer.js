@@ -69,7 +69,7 @@ const SideDrawer = () => {
         position: "top-left",
       });
     } else {
-      fetch(`https://mern-takl-a-tive.herokuapp.com/users?search=${search}`, {
+      fetch(`https://talk-a-tive-server.herokuapp.com/users?search=${search}`, {
         method: "GET",
         headers: {
           "Content-type": "application/json",
@@ -113,7 +113,7 @@ const SideDrawer = () => {
       redirect: "follow",
     };
 
-    fetch("https://mern-takl-a-tive.herokuapp.com/chat", requestOptions)
+    fetch("https://talk-a-tive-server.herokuapp.com/chat", requestOptions)
       .then((response) => response.json())
       .then((data) => {
 

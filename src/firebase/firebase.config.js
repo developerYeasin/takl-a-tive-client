@@ -5,12 +5,12 @@ import { initializeApp } from "firebase/app";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyAH0-a3km8lAQPxLgbEJCcdn1yx3IyD2-Y",
-  authDomain: "mern-talk-a-tive.firebaseapp.com",
-  projectId: "mern-talk-a-tive",
-  storageBucket: "mern-talk-a-tive.appspot.com",
-  messagingSenderId: "804862097142",
-  appId: "1:804862097142:web:1cf228d4e9eaf042abded7",
+  apiKey: "AIzaSyA_IFNaZzZq3v9W2rC4wBFlFKjtBzLfqQs",
+  authDomain: "talk-a-tive-yeasin.firebaseapp.com",
+  projectId: "talk-a-tive-yeasin",
+  storageBucket: "talk-a-tive-yeasin.appspot.com",
+  messagingSenderId: "314119816577",
+  appId: "1:314119816577:web:8f37978d2ac3762d971480"
 };
 
 // Initialize Firebase

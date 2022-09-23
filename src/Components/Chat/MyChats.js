@@ -23,7 +23,7 @@ const MyChats = ({ fetchAgain }) => {
   const toast = useToast();
 
   const fetchChats = () => {
-    fetch("https://mern-takl-a-tive.herokuapp.com/chat", {
+    fetch("https://talk-a-tive-server.herokuapp.com/chat", {
       headers: {
         Authorization: `Bearer ${user.token}`,
       },

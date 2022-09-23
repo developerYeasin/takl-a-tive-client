@@ -67,7 +67,7 @@ const UpdateGroupChatModal = ({ fetchAgain, setFetchAgain, fetchMessages }) => {
       return;
     }
 
-    fetch("https://mern-takl-a-tive.herokuapp.com/chat/groupadd", {
+    fetch("https://talk-a-tive-server.herokuapp.com/chat/groupadd", {
       method: "put",
       headers: {
         "Content-type": "application/json",
@@ -110,7 +110,7 @@ const UpdateGroupChatModal = ({ fetchAgain, setFetchAgain, fetchMessages }) => {
       });
       return;
     }
-    fetch("https://mern-takl-a-tive.herokuapp.com/chat/groupremove", {
+    fetch("https://talk-a-tive-server.herokuapp.com/chat/groupremove", {
       method: "put",
       headers: {
         "Content-type": "application/json",
@@ -147,7 +147,7 @@ const UpdateGroupChatModal = ({ fetchAgain, setFetchAgain, fetchMessages }) => {
     setRenameLoading(true);
     if (!groupChatName) return;
 
-    fetch("https://mern-takl-a-tive.herokuapp.com/chat/rename", {
+    fetch("https://talk-a-tive-server.herokuapp.com/chat/rename", {
       method: "put",
       headers: {
         "Content-type": "application/json",
@@ -186,7 +186,7 @@ const UpdateGroupChatModal = ({ fetchAgain, setFetchAgain, fetchMessages }) => {
       setLoading(false);
       return;
     }
-    fetch(`https://mern-takl-a-tive.herokuapp.com/users?search=${search}`, {
+    fetch(`https://talk-a-tive-server.herokuapp.com/users?search=${search}`, {
       method: "GET",
       headers: {
         "Content-type": "application/json",

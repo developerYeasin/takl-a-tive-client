@@ -15,7 +15,7 @@ import UpdateGroupChatModal from "../GroupChat/UpdateGroupChatModal";
 import ScrollableChat from "./ScrollableChat";
 import io from "socket.io-client";
 
-const ENDPOINT = "https://mern-takl-a-tive.herokuapp.com";
+const ENDPOINT = "https://talk-a-tive-server.herokuapp.com";
 
 var socket, selectedChatCompare;
 
@@ -48,7 +48,7 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
 
     if (event.key === "Enter" && newMessage) {
       setNewMessage("");
-      fetch("https://mern-takl-a-tive.herokuapp.com/message", {
+      fetch("https://talk-a-tive-server.herokuapp.com/message", {
         method: "post",
         headers: {
           "Content-type": "application/json",
@@ -99,7 +99,7 @@ setTimeout(() => {
   const fetchMessages = () => {
     if (!selectedChat) return;
     setLoading(true);
-    fetch(`https://mern-takl-a-tive.herokuapp.com/message/${selectedChat._id}`, {
+    fetch(`https://talk-a-tive-server.herokuapp.com/message/${selectedChat._id}`, {
       headers: {
         Authorization: `Bearer ${user.token}`,
       },

@@ -41,7 +41,7 @@ const GroupChatModal = ({children}) => {
      const handleSearch = (query) => {
          setSearch(query);
           
-      fetch(`https://mern-takl-a-tive.herokuapp.com/users?search=${search}`, {
+      fetch(`https://talk-a-tive-server.herokuapp.com/users?search=${search}`, {
         method: "GET",
         headers: {
           "Content-type": "application/json",
@@ -99,7 +99,7 @@ const GroupChatModal = ({children}) => {
               return;
          }
 
-         fetch("https://mern-takl-a-tive.herokuapp.com/chat/group", {
+         fetch("https://talk-a-tive-server.herokuapp.com/chat/group", {
            method: "post",
            headers: {
              "Content-type": "application/json",

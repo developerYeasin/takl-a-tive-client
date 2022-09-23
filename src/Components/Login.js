@@ -4,7 +4,7 @@ import { useForm } from "react-hook-form";
 import { AiFillEyeInvisible, AiFillEye } from "react-icons/ai";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import { UserContext } from "../App";
- 
+
 const Login = () => {
   const [passwordShow, setPasswordShow] = useState(false);
   const [loggedInUser, setLoggedInUser] = useContext(UserContext);
@@ -15,36 +15,36 @@ const Login = () => {
     formState: { errors },
   } = useForm();
 
- const location = useLocation();
-const navigate = useNavigate();
-const { from } = location.state || { from: { pathname: "/" } };
+  const location = useLocation();
+  const navigate = useNavigate();
+  const { from } = location.state || { from: { pathname: "/" } };
 
-useEffect(() => {
-  const userInfo = JSON.parse(localStorage.getItem("userInfo"));
-  if (userInfo) {
-    setLoggedInUser(userInfo);
-    navigate(from, { replace: true });
-  }
-}, [from, navigate, setLoggedInUser]);
+  useEffect(() => {
+    const userInfo = JSON.parse(localStorage.getItem("userInfo"));
+    if (userInfo) {
+      setLoggedInUser(userInfo);
+      navigate(from, { replace: true });
+    }
+  }, []);
 
   const onSubmit = async (data) => {
-
-   await fetch("https://mern-takl-a-tive.herokuapp.com/users/login", {
+    await fetch("https://talk-a-tive-server.herokuapp.com/users/login", {
       method: "POST",
       headers: {
-        'Content-type': 'application/json'
+        "Content-type": "application/json",
       },
-      body: JSON.stringify(data)
-    }).then(res => res.json())
-    .then(user => {
-     if (user.message) {
-       alert(user.message);
-     } else {
-       localStorage.setItem("userInfo", JSON.stringify(user));
-       navigate("/chat", { replace: true });
-     }
+      body: JSON.stringify(data),
     })
-    .catch(err => alert(err)); 
+      .then((res) => res.json())
+      .then((user) => {
+        if (user.message) {
+          alert(user.message);
+        } else {
+          localStorage.setItem("userInfo", JSON.stringify(user));
+          navigate("/chat", { replace: true });
+        }
+      })
+      .catch((err) => alert(err));
   };
 
   return (
@@ -107,7 +107,7 @@ const Container = styled.div`
 `;
 const SignUpCard = styled.div`
   background: linear-gradient(45deg, #ffffff9e, #ffffff9e);
-      box-shadow: 0 0 20px -5px #111;
+  box-shadow: 0 0 20px -5px #111;
   padding: 30px;
   border-radius: 10px;
   width: 40%;
